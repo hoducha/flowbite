@@ -140,8 +140,8 @@ class CopyClipboard implements CopyClipboardInterface {
     }
 }
 
-export function initCopyClipboards() {
-    document
+export function initCopyClipboards(rootElement?: HTMLElement | Document) {
+    (rootElement || document)
         .querySelectorAll('[data-copy-to-clipboard-target]')
         .forEach(($triggerEl) => {
             const targetId = $triggerEl.getAttribute(

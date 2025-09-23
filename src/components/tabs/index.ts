@@ -136,8 +136,8 @@ class Tabs implements TabsInterface {
     }
 }
 
-export function initTabs() {
-    document.querySelectorAll('[data-tabs-toggle]').forEach(($parentEl) => {
+export function initTabs(rootElement?: HTMLElement | Document) {
+    (rootElement || document).querySelectorAll('[data-tabs-toggle]').forEach(($parentEl) => {
         const tabItems: TabItem[] = [];
         const activeClasses = $parentEl.getAttribute(
             'data-tabs-active-classes'

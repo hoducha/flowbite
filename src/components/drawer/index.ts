@@ -313,8 +313,8 @@ class Drawer implements DrawerInterface {
     }
 }
 
-export function initDrawers() {
-    document.querySelectorAll('[data-drawer-target]').forEach(($triggerEl) => {
+export function initDrawers(rootElement?: HTMLElement | Document) {
+    (rootElement || document).querySelectorAll('[data-drawer-target]').forEach(($triggerEl) => {
         // mandatory
         const drawerId = $triggerEl.getAttribute('data-drawer-target');
         const $drawerEl = document.getElementById(drawerId);

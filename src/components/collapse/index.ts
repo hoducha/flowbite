@@ -127,8 +127,8 @@ class Collapse implements CollapseInterface {
     }
 }
 
-export function initCollapses() {
-    document
+export function initCollapses(rootElement?: HTMLElement | Document) {
+    (rootElement || document)
         .querySelectorAll('[data-collapse-toggle]')
         .forEach(($triggerEl) => {
             const targetId = $triggerEl.getAttribute('data-collapse-toggle');

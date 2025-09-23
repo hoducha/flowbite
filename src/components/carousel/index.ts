@@ -308,8 +308,8 @@ class Carousel implements CarouselInterface {
     }
 }
 
-export function initCarousels() {
-    document.querySelectorAll('[data-carousel]').forEach(($carouselEl) => {
+export function initCarousels(rootElement?: HTMLElement | Document) {
+    (rootElement || document).querySelectorAll('[data-carousel]').forEach(($carouselEl) => {
         const interval = $carouselEl.getAttribute('data-carousel-interval');
         const slide =
             $carouselEl.getAttribute('data-carousel') === 'slide'

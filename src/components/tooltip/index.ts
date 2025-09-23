@@ -294,8 +294,8 @@ class Tooltip implements TooltipInterface {
     }
 }
 
-export function initTooltips() {
-    document.querySelectorAll('[data-tooltip-target]').forEach(($triggerEl) => {
+export function initTooltips(rootElement?: HTMLElement | Document) {
+    (rootElement || document).querySelectorAll('[data-tooltip-target]').forEach(($triggerEl) => {
         const tooltipId = $triggerEl.getAttribute('data-tooltip-target');
         const $tooltipEl = document.getElementById(tooltipId);
 

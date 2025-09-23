@@ -333,8 +333,8 @@ class Dropdown implements DropdownInterface {
     }
 }
 
-export function initDropdowns() {
-    document
+export function initDropdowns(rootElement?: HTMLElement | Document) {
+    (rootElement || document)
         .querySelectorAll('[data-dropdown-toggle]')
         .forEach(($triggerEl) => {
             const dropdownId = $triggerEl.getAttribute('data-dropdown-toggle');

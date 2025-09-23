@@ -185,8 +185,8 @@ class Accordion implements AccordionInterface {
     }
 }
 
-export function initAccordions() {
-    document.querySelectorAll('[data-accordion]').forEach(($accordionEl) => {
+export function initAccordions(rootElement?: HTMLElement | Document) {
+    (rootElement || document).querySelectorAll('[data-accordion]').forEach(($accordionEl) => {
         const alwaysOpen = $accordionEl.getAttribute('data-accordion');
         const activeClasses = $accordionEl.getAttribute('data-active-classes');
         const inactiveClasses = $accordionEl.getAttribute(

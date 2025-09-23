@@ -192,8 +192,8 @@ class Datepicker implements DatepickerInterface {
     }
 }
 
-export function initDatepickers() {
-    document
+export function initDatepickers(rootElement?: HTMLElement | Document) {
+    (rootElement || document)
         .querySelectorAll(
             '[datepicker], [inline-datepicker], [date-rangepicker]'
         )
