@@ -69,6 +69,7 @@
     "clean:lib": "shx rm -rf lib",
     "clean:dist": "shx rm -rf dist",
     "build:npm": "run-s clean:lib build:lib clean:dist build:dist",
+    "prepare": "npm run build:npm",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore"
   },
   "devDependencies": {
